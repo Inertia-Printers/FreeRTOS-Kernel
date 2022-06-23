@@ -304,7 +304,7 @@ add_library(freertos_kernel_port STATIC
         MPLAB/PIC18F/port.c>
     $<$<STREQUAL:${FREERTOS_PORT},MPLAB_PIC24>:
         MPLAB/PIC24_dsPIC/port.c
-        MPLAB/PIC24_dsPIC/portasm_PIC24.S> # TODO: What to do with portasm_dsPIC.S ?
+        MPLAB/PIC24_dsPIC/portasm_dsPIC.S> # TODO: What to do with portasm_dsPIC.S ?
     $<$<STREQUAL:${FREERTOS_PORT},MPLAB_PIC32MEC14XX>:
         MPLAB/PIC32MEC14xx/port.c
         MPLAB/PIC32MEC14xx/port_asm.S>
