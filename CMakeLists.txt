@@ -172,7 +172,7 @@ endif()
 
 add_subdirectory(portable)
 
-add_library(freertos_kernel STATIC
+add_library(${PROJECT_NAME}_freertos_kernel STATIC
     croutine.c
     event_groups.c
     list.c
@@ -185,10 +185,10 @@ add_library(freertos_kernel STATIC
     $<IF:$<BOOL:$<FILTER:${FREERTOS_HEAP},EXCLUDE,^[1-5]$>>,${FREERTOS_HEAP},portable/MemMang/heap_${FREERTOS_HEAP}.c>
 )
 
-target_include_directories(freertos_kernel
+target_include_directories(${PROJECT_NAME}_freertos_kernel
     PUBLIC
         include
         ${FREERTOS_CONFIG_FILE_DIRECTORY}
 )
 
-target_link_libraries(freertos_kernel freertos_kernel_port)
+target_link_libraries(${PROJECT_NAME}_freertos_kernel freertos_kernel_port)
