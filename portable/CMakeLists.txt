@@ -411,6 +411,8 @@ if(
 endif()
 
 target_include_directories(freertos_kernel_port PUBLIC
+    ../include
+    ${FREERTOS_CONFIG_FILE_DIRECTORY}
     $<$<STREQUAL:${FREERTOS_PORT},BCC_16BIT_DOS_FLSH186>:
         ${CMAKE_CURRENT_LIST_DIR}/BCC/16BitDOS/common
         ${CMAKE_CURRENT_LIST_DIR}/BCC/16BitDOS/Flsh186>
