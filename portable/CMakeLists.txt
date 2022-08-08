@@ -567,7 +567,7 @@ target_link_libraries(freertos_kernel_port
         $<$<STREQUAL:${FREERTOS_PORT},GCC_RP2040>:pico_base_headers>
         $<$<STREQUAL:${FREERTOS_PORT},GCC_XTENSA_ESP32>:idf::esp32>
     PRIVATE
-        freertos_kernel
+    ${PROJECT_NAME}_freertos_kernel
         "$<$<STREQUAL:${FREERTOS_PORT},GCC_RP2040>:hardware_clocks;hardware_exception>"
         $<$<STREQUAL:${FREERTOS_PORT},MSVC_MINGW>:winmm> # Windows library which implements timers
 )
